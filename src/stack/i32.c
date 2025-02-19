@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   i32.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sbasak <sbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:36:34 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/19 16:18:56 by tbasak           ###   ########.fr       */
+/*   Updated: 2025/02/19 20:50:31 by sbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	destroy(t_stack_i32 *self)
 	mem_free(self);
 }
 
-t_stack_i32	*new_stack_i32()
+t_stack_i32	*new_stack_i32(void)
 {
 	t_stack_i32	*self;
 
