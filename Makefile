@@ -4,7 +4,7 @@ SRC = $(shell find src -name "*.c")
 OBJ = $(SRC:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./include
+CFLAGS = -Wall -Wextra -Werror -I./
 
 %.o: src/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
