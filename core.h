@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alloc_gen_t.h                                      :+:      :+:    :+:   */
+/*   core.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 12:35:59 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/20 21:42:13 by tbasak           ###   ########.fr       */
+/*   Created: 2025/02/21 08:23:45 by tbasak            #+#    #+#             */
+/*   Updated: 2025/02/21 08:24:46 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALLOC_GEN_T
-# define ALLOC_GEN_T
+#ifndef CORE_H
+# define CORE_H
 
+# define USIZE_MIN 0
+# define USIZE_MAX 0xFFFFFFFFFFFFFFFF
 
-# include "types/gen_t.h"
-
-t_gen_t	*alloc_gen_t();
+typedef unsigned long long	t_usize;
 
 #endif

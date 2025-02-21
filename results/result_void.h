@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   usize.h                                            :+:      :+:    :+:   */
+/*   result_void.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 23:30:08 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/20 12:13:20 by tbasak           ###   ########.fr       */
+/*   Created: 2025/02/20 09:35:04 by tbasak            #+#    #+#             */
+/*   Updated: 2025/02/20 21:35:09 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef USIZE_H
-# define USIZE_H
+#ifndef RESULT_VOID_H
+# define RESULT_VOID_H
 
-# define USIZE_MIN 0
-# define USIZE_MAX 0xFFFFFFFFFFFFFFFF
+# include "types/bool.h"
+# include "types/u16.h"
 
-typedef unsigned long long	t_usize;
+typedef struct s_result_void
+{
+	t_bool	success;
+	t_bool	fail;
+	t_u16	code;
+}			t_result_void;
+
+t_result_void	ok_void();
+t_result_void	err_void(t_u16 code);
 
 #endif

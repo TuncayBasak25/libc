@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlit.c                                           :+:      :+:    :+:   */
+/*   u16.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 00:33:46 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/20 00:35:35 by tbasak           ###   ########.fr       */
+/*   Created: 2025/02/12 23:30:08 by codespace         #+#    #+#             */
+/*   Updated: 2025/02/21 08:25:17 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "types/primitives/strlit.h"
+#ifndef U16_H
+# define U16_H
 
-t_usize	strlit_len(t_strlit str)
-{
-	t_usize	len;
+typedef unsigned short	t_u16;
 
-	if (!str)
-		return (0);
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+#endif

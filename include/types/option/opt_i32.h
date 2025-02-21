@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   logging.c                                          :+:      :+:    :+:   */
+/*   opt_i32.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 12:07:18 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/20 07:59:00 by tbasak           ###   ########.fr       */
+/*   Created: 2025/02/12 23:30:08 by codespace         #+#    #+#             */
+/*   Updated: 2025/02/19 23:54:37 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "types/primitives/strlit.h"
-#include "logging.h"
+#ifndef OPT_I32_H
+# define OPT_I32_H
 
-static void	print(t_strlit msg)
+# include "types/primitives/i32.h"
+# include "types/primitives/u32.h"
+
+typedef struct s_opt_i32
 {
-	t_usize	i;
+	t_i32	value;
+	t_u32	error;
+}			t_opt_i32;
 
-	i = 0;
-	while (msg[i])
-		i++;
-	write(1, msg, i);
+static inline t_opt_i32	opt_i32(t_i32 value, t_u32 error)
+{
+	return ((t_opt_i32){value, error});
 }
 
-void	error_log(t_strlit msg)
-{
-	if (!msg)
-		msg = "Null debug message!";
-	print(RED);
-	print(msg);
-	print(RESET "\n");
-}
-
-void	println(t_strlit msg)
-{
-	if (!msg)
-		msg = "Null println!";
-	print(GREEN);
-	print(msg);
-	print(RESET "\n");
-}
+#endif
