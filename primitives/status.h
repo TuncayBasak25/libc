@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   core.h                                             :+:      :+:    :+:   */
+/*   status.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 08:23:45 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/21 08:24:46 by tbasak           ###   ########.fr       */
+/*   Created: 2025/02/22 13:00:32 by tbasak            #+#    #+#             */
+/*   Updated: 2025/02/22 14:07:33 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CORE_H
-# define CORE_H
+#ifndef STATUS_H
+# define STATUS_H
 
-# define USIZE_MIN 0
-# define USIZE_MAX 0xFFFFFFFFFFFFFFFF
+# include "primitives/bool.h"
+# include "primitives/u32.h"
 
-typedef unsigned long long	t_usize;
+typedef struct s_status
+{
+	t_bool	success;
+	t_bool	fail;
+}			t_status;
+
+t_status	status_success();
+t_status	status_fail();
+t_status	status_error(t_u32 code, char *error_status);
 
 #endif
