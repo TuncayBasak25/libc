@@ -6,7 +6,7 @@
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:11:09 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/24 18:21:18 by tbasak           ###   ########.fr       */
+/*   Updated: 2025/02/25 11:45:21 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,19 @@ typedef long long			t_isize;
 
 typedef char				t_bool;
 
-# define TRUE ((t_bool)1)
-# define FALSE ((t_bool)0)
+# define TRUE 1
+# define FALSE 0
+
+typedef struct s_error
+{
+	t_usize	code;
+	char	*msg;
+}			t_error;
+
+static inline t_error	error(t_usize code, char *msg)
+{
+	return ((t_error){code, msg});
+}
 
 typedef struct s_result
 {
@@ -36,7 +47,9 @@ typedef struct s_result
 	t_bool	is_fail;
 }			t_result;
 
-# define SUCCESS ((t_result){TRUE, FALSE})
-# define FAIL ((t_result){FALSE, TRUE})
+# define MACA (
+# define MUST_USE __attribute__
+
+# define RESULT t_result
 
 #endif
