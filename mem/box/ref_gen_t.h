@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   status.h                                           :+:      :+:    :+:   */
+/*   ref_gen_t.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 13:00:32 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/22 14:07:33 by tbasak           ###   ########.fr       */
+/*   Created: 2025/02/25 13:34:30 by tbasak            #+#    #+#             */
+/*   Updated: 2025/02/26 07:31:13 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STATUS_H
-# define STATUS_H
+#ifndef SREF_GEN_T_H
+# define SREF_GEN_T_H
 
-# include "primitives/bool.h"
-# include "primitives/u32.h"
+# include "core.h"
+# include "box_gen_t.h"
 
-typedef struct s_status
+typedef char	t_gen_t;
+
+typedef struct s_sref_gen_t
 {
-	t_bool	success;
-	t_bool	fail;
-}			t_status;
+	t_gen_t	*p;
+}			t_sref_gen_t;
 
-t_status	status_success();
-t_status	status_fail();
-t_status	status_error(t_u32 code, char *error_status);
+typedef struct s_wref_gen_t
+{
+	void	*unsafe_ptr;
+	t_usize	index;
+}			*t_wref_gen_t;
+
+RESULT			new_sref_gen_t(t_sref_gen_t *out);
+t_sref_gen_t	clone_sref_gen_t(t_sref_gen_t *self);
+t_wref_gen_t	watch_
+void			destroy_sref_gen_t(t_sref_gen_t sref);
 
 #endif

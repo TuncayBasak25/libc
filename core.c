@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bool.h                                             :+:      :+:    :+:   */
+/*   core.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 23:30:08 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/20 00:16:43 by tbasak           ###   ########.fr       */
+/*   Created: 2025/02/25 13:55:04 by tbasak            #+#    #+#             */
+/*   Updated: 2025/02/25 13:58:42 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOL_H
-# define BOOL_H
+#include "core.h"
 
-# define TRUE (1)
-# define FALSE (0)
+t_error	error(t_usize code, char *msg)
+{
+	return ((t_error){code, msg});
+}
 
-typedef char	t_bool;
+t_result	success()
+{
+	return ((t_result){TRUE, FALSE});
+}
 
-#endif
+t_result	fail()
+{
+	return ((t_result){FALSE, TRUE});
+}
