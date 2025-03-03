@@ -6,7 +6,7 @@
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:11:09 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/25 13:59:28 by tbasak           ###   ########.fr       */
+/*   Updated: 2025/03/03 11:04:02 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,8 @@ typedef char				t_bool;
 # define TRUE 1
 # define FALSE 0
 
-typedef struct s_error
-{
-	t_usize	code;
-	char	*msg;
-}			t_error;
-
-t_error	error(t_usize code, char *msg);
-
-typedef struct s_result
-{
-	t_bool	is_success;
-	t_bool	is_fail;
-}			t_result;
-
-# define RESULT t_result __attribute__((warn_unused_result))
-
-t_result	success();
-t_result	fail();
+# define RESULT t_bool __attribute__((warn_unused_result))
+# define SUCCESS 0
+# define FAIL 1
 
 #endif

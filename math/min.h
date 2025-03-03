@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ref_gen_t.h                                        :+:      :+:    :+:   */
+/*   min.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 13:34:30 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/26 07:31:13 by tbasak           ###   ########.fr       */
+/*   Created: 2025/03/03 09:45:34 by tbasak            #+#    #+#             */
+/*   Updated: 2025/03/03 09:53:07 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SREF_GEN_T_H
-# define SREF_GEN_T_H
+#ifndef MIN_H
+# define MIN_H
 
 # include "core.h"
-# include "box_gen_t.h"
 
-typedef char	t_gen_t;
-
-typedef struct s_sref_gen_t
-{
-	t_gen_t	*p;
-}			t_sref_gen_t;
-
-typedef struct s_wref_gen_t
-{
-	void	*unsafe_ptr;
-	t_usize	index;
-}			*t_wref_gen_t;
-
-RESULT			new_sref_gen_t(t_sref_gen_t *out);
-t_sref_gen_t	clone_sref_gen_t(t_sref_gen_t *self);
-t_wref_gen_t	watch_
-void			destroy_sref_gen_t(t_sref_gen_t sref);
+t_u8	min_u8(t_u8 a, t_u8 b);
+t_u16	min_u16(t_u16 a, t_u16 b);
+t_u32	min_u32(t_u32 a, t_u32 b);
+t_u64	min_u64(t_u64 a, t_u64 b);
+t_usize	min_usize(t_usize a, t_usize b);
+t_i8	min_i8(t_i8 a, t_i8 b);
+t_i16	min_i16(t_i16 a, t_i16 b);
+t_i32	min_i32(t_i32 a, t_i32 b);
+t_i64	min_i64(t_i64 a, t_i64 b);
+t_isize	min_isize(t_isize a, t_isize b);
 
 #endif

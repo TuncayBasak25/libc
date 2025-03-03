@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   core.c                                             :+:      :+:    :+:   */
+/*   copy.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 13:55:04 by tbasak            #+#    #+#             */
-/*   Updated: 2025/02/25 13:58:42 by tbasak           ###   ########.fr       */
+/*   Created: 2025/02/25 13:52:34 by tbasak            #+#    #+#             */
+/*   Updated: 2025/03/03 15:29:44 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "core.h"
+#include "array_gen_t.h"
+#include "min.h"
+#include "mem/copy/copy_gen_t.h"
 
-t_error	error(t_usize code, char *msg)
+void	array_copy_gen_t(t_array_gen_t *dst, t_array_gen_t *src)
 {
-	return ((t_error){code, msg});
+	array_ncopy_gen_t(dst, src, -1);
 }
 
-t_result	success()
+void	array_ncopy_gen_t(t_array_gen_t *dst, t_array_gen_t *src, t_usize n)
 {
-	return ((t_result){TRUE, FALSE});
-}
+	t_usize	i;
 
-t_result	fail()
-{
-	return ((t_result){FALSE, TRUE});
+	n = min_usize(dst->len, n);
+	n = min_usize(src->len, n);
+	i = 0;
+	while (i < n)
+	{
+		copy_gen_t(dst + i, src + i);
+		i++;
+	}
 }

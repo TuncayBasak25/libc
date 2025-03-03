@@ -1,28 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   box_gen_t.h                                        :+:      :+:    :+:   */
+/*   imin.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbasak <tbasak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 13:34:30 by tbasak            #+#    #+#             */
-/*   Updated: 2025/03/03 14:28:14 by tbasak           ###   ########.fr       */
+/*   Created: 2025/03/03 09:47:30 by tbasak            #+#    #+#             */
+/*   Updated: 2025/03/03 09:50:48 by tbasak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOX_GEN_T_H
-# define BOX_GEN_T_H
+#include "min.h"
 
-# include "core.h"
-
-typedef char	t_gen_t;
-
-typedef struct s_box_gen_t
+t_i8	min_i8(t_i8 a, t_i8 b)
 {
-	t_gen_t	*ptr;
-}			t_box_gen_t;
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-RESULT	box_create_gen_t(t_gen_t *object, t_box_gen_t *out);
-void	box_destroy_gen_t(t_box_gen_t box);
+t_i16	min_i16(t_i16 a, t_i16 b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-#endif
+t_i32	min_i32(t_i32 a, t_i32 b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+t_i64	min_i64(t_i64 a, t_i64 b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+t_isize	min_isize(t_isize a, t_isize b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
